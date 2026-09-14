@@ -109,8 +109,7 @@ const T = {
       enter: 'Enter',
       cornerTl: 'Portfolio / 2026',
       cornerTr: 'Nour Darwesh',
-      cornerBl: 'Cairo · Egypt',
-      cornerBr: 'Available for work',
+
     },
   },
   ar: {
