@@ -109,7 +109,8 @@ const T = {
       enter: 'Enter',
       cornerTl: 'Portfolio / 2026',
       cornerTr: 'Nour Darwesh',
-
+      cornerBl: 'Cairo · Egypt',
+      cornerBr: 'Available for work',
     },
   },
   ar: {
@@ -267,7 +268,6 @@ function Intro({ onEnter, lang }) {
       />
 
       <div className="intro-stage">
-        {/* eyebrow */}
         <motion.span
           className="intro-eyebrow"
           initial={{ opacity: 0, y: -12 }}
@@ -277,7 +277,6 @@ function Intro({ onEnter, lang }) {
           {t.eyebrow}
         </motion.span>
 
-        {/* name — char-by-char for English, word-by-word for Arabic */}
         <div className="intro-word">
           {isAr
             ? name.split(' ').map((word, i) => (
@@ -314,7 +313,6 @@ function Intro({ onEnter, lang }) {
               ))}
         </div>
 
-        {/* horizontal rule under name */}
         <motion.span
           className="intro-line"
           initial={{ scaleX: 0, opacity: 0 }}
@@ -322,7 +320,6 @@ function Intro({ onEnter, lang }) {
           transition={{ duration: 1.2, delay: 2.1, ease: EASE }}
         />
 
-        {/* profile badge */}
         <motion.div
           className="intro-profile"
           initial={{ opacity: 0, scale: 0.7, y: 20 }}
@@ -333,7 +330,6 @@ function Intro({ onEnter, lang }) {
           <span className="intro-profile-text">{t.profile}</span>
         </motion.div>
 
-        {/* tagline: two roles */}
         <motion.p
           className="intro-tagline"
           initial={{ opacity: 0, y: 14 }}
@@ -345,7 +341,6 @@ function Intro({ onEnter, lang }) {
           {t.taglineB}
         </motion.p>
 
-        {/* subtitle with side lines */}
         <motion.div
           className="intro-subtitle"
           initial={{ opacity: 0, y: 20 }}
@@ -357,7 +352,6 @@ function Intro({ onEnter, lang }) {
           <span className="intro-subtitle-line" />
         </motion.div>
 
-        {/* CTA */}
         <motion.button
           className="intro-cta"
           initial={{ opacity: 0, y: 20 }}
@@ -590,14 +584,34 @@ function Nav({ t, theme, onToggleTheme, lang, onToggleLang }) {
 }
 
 /* ============================================================
-   HERO — 3D interactive scene
+   HERO — 3D scene + scroll transitions
    ============================================================ */
 function Hero({ t }) {
   const heroRef = useRef(null);
+
+  /* mouse parallax */
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
   const smx = useSpring(mx, { stiffness: 90, damping: 20, mass: 0.8 });
   const smy = useSpring(my, { stiffness: 90, damping: 20, mass: 0.8 });
+
+  /* scroll progress of the hero section */
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  });
+
+  /* word fades + lifts up as you scroll */
+  const wordOpacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
+  const wordY = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const wordScale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
+
+  /* photo fades + drifts down slightly */
+  const photoOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+  const photoY = useTransform(scrollYProgress, [0, 1], [0, 90]);
+
+  /* bottom bar fades out first */
+  const bottomOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
 
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
@@ -616,6 +630,7 @@ function Hero({ t }) {
     my.set(0);
   };
 
+  /* mouse-parallax transforms */
   const tX = useTransform(smx, [-0.5, 0.5], [16, -16]);
   const tY = useTransform(smy, [-0.5, 0.5], [10, -10]);
   const tRotY = useTransform(smx, [-0.5, 0.5], [-5, 5]);
@@ -635,56 +650,77 @@ function Hero({ t }) {
       onMouseLeave={handleLeave}
     >
       <div className="hero-3d-scene">
+        {/* WORD — outer: scroll fade, inner: mouse parallax */}
         <motion.div
           className="hero-bg-layer"
           aria-hidden
           style={{
-            x: tX,
-            y: tY,
-            rotateX: tRotX,
-            rotateY: tRotY,
-            z: -140,
-            transformStyle: 'preserve-3d',
+            opacity: wordOpacity,
+            y: wordY,
+            scale: wordScale,
           }}
         >
-          <motion.h1
-            className="hero-bg-text"
-            initial={{ y: '-40vh', opacity: 0, rotateX: 45 }}
-            animate={{ y: 0, opacity: 1, rotateX: 0 }}
-            transition={{ duration: 1.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          <motion.div
+            style={{
+              x: tX,
+              y: tY,
+              rotateX: tRotX,
+              rotateY: tRotY,
+              z: -140,
+              transformStyle: 'preserve-3d',
+            }}
           >
-            {t.hero.bigWord}
-          </motion.h1>
+            <motion.h1
+              className="hero-bg-text"
+              initial={{ y: '-40vh', opacity: 0, rotateX: 45 }}
+              animate={{ y: 0, opacity: 1, rotateX: 0 }}
+              transition={{ duration: 1.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {t.hero.bigWord}
+            </motion.h1>
+          </motion.div>
         </motion.div>
 
+        {/* PHOTO — outer: scroll fade, inner: mouse parallax */}
         <motion.div
           className="hero-photo-layer"
           style={{
-            x: pX,
-            y: pY,
-            rotateX: pRotX,
-            rotateY: pRotY,
-            z: 40,
-            transformStyle: 'preserve-3d',
+            opacity: photoOpacity,
+            y: photoY,
           }}
         >
-          <motion.img
-            src="/WhatsApp_Image_2026-09-14_at_5.31.22_AM-removebg-preview.png"
-            alt="Nour Darwesh"
-            className="hero-photo-img"
-            draggable={false}
-            initial={{ y: '100vh', opacity: 0, rotateX: 40, scale: 0.85 }}
-            animate={{ y: 0, opacity: 1, rotateX: 0, scale: 1 }}
-            transition={{ duration: 1.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          />
+          <motion.div
+            style={{
+              x: pX,
+              y: pY,
+              rotateX: pRotX,
+              rotateY: pRotY,
+              z: 40,
+              transformStyle: 'preserve-3d',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'flex-end',
+              width: '100%',
+              height: '100%',
+            }}
+          >
+            <motion.img
+              src="/WhatsApp_Image_2026-09-14_at_5.31.22_AM-removebg-preview.png"
+              alt="Nour Darwesh"
+              className="hero-photo-img"
+              draggable={false}
+              initial={{ y: '100vh', opacity: 0, rotateX: 40, scale: 0.85 }}
+              animate={{ y: 0, opacity: 1, rotateX: 0, scale: 1 }}
+              transition={{ duration: 1.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            />
+          </motion.div>
         </motion.div>
       </div>
 
+      {/* BOTTOM BAR — fades out on scroll (children keep their own entry animation) */}
       <motion.div
         className="hero-bottom"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1.1, ease: EASE }}
+        style={{ opacity: bottomOpacity }}
       >
         <motion.div
           className="hero-subtitle"
