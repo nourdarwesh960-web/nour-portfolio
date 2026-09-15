@@ -18,6 +18,7 @@ const LINKEDIN_URL = 'https://www.linkedin.com/in/nour-darwesh-13aa1b38b/';
 const GITHUB_URL = 'https://github.com/nourdarwesh960-web';
 const INSTAGRAM_URL = 'https://www.instagram.com/nourrdarwesh_/';
 const STORE_URL = 'https://cmnriuac3001501ma0wr1dxbk.wuiltstore.com/en';
+const LINKGUARD_URL = 'https://nourdarwesh.pythonanywhere.com/';
 
 const TECH_TICKER = [
   'HTML', 'CSS', 'JavaScript', 'TypeScript',
@@ -90,8 +91,18 @@ const T = {
     work: {
       title: 'Selected Work',
       items: [
-        { title: 'Portfolio Website', summary: 'A personal portfolio with a cinematic intro, word-by-word scroll reveals, and a fixed top bar with a sliding active indicator.' },
-        { title: "L'Atelier Store", summary: 'A modern e-commerce storefront for a fashion brand. Focused on a clean product grid, smooth cart interactions, and a mobile-first responsive layout.' },
+        {
+          title: 'Portfolio Website',
+          summary: 'A personal portfolio with a cinematic intro, word-by-word scroll reveals, and a fixed top bar with a sliding active indicator.'
+        },
+        {
+          title: "L'Atelier Store",
+          summary: 'A modern e-commerce storefront for a fashion brand. Focused on a clean product grid, smooth cart interactions, and a mobile-first responsive layout.'
+        },
+        {
+          title: 'LinkGuard',
+          summary: 'A Python-based web application for checking and validating links through a simple, focused interface.'
+        },
       ],
     },
     contact: {
@@ -113,6 +124,7 @@ const T = {
       cornerBr: 'Available for work',
     },
   },
+
   ar: {
     dir: 'rtl',
     nav: { home: 'الرئيسية', about: 'نبذة', services: 'الخدمات', work: 'أعمالي', contact: 'تواصل' },
@@ -167,8 +179,18 @@ const T = {
     work: {
       title: 'أعمال مختارة',
       items: [
-        { title: 'موقع البورتفوليو', summary: 'بورتفوليو شخصي مع مقدمة سينمائية وكشف الكلمات عند التمرير.' },
-        { title: "متجر L'Atelier", summary: 'متجر إلكتروني حديث لعلامة أزياء.' },
+        {
+          title: 'موقع البورتفوليو',
+          summary: 'بورتفوليو شخصي مع مقدمة سينمائية وكشف الكلمات عند التمرير.'
+        },
+        {
+          title: "متجر L'Atelier",
+          summary: 'متجر إلكتروني حديث لعلامة أزياء.'
+        },
+        {
+          title: 'LinkGuard',
+          summary: 'تطبيق ويب مبني باستخدام Python لفحص والتحقق من الروابط من خلال واجهة بسيطة ومركزة.'
+        },
       ],
     },
     contact: {
@@ -220,6 +242,7 @@ function ScrollText({ text, className = '' }) {
 
 function Word({ children, progress, range }) {
   const opacity = useTransform(progress, range, [0.15, 1]);
+
   return (
     <span className="scroll-word">
       <motion.span style={{ opacity }}>{children}</motion.span>
@@ -233,6 +256,7 @@ function Word({ children, progress, range }) {
 function Fade({ children, delay = 0, className = '', y = 30 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.1 });
+
   return (
     <motion.div
       ref={ref}
@@ -360,6 +384,7 @@ function Intro({ onEnter, lang }) {
           onClick={onEnter}
         >
           <span>{t.enter}</span>
+
           <motion.span
             className="intro-cta-arrow"
             animate={{ x: [0, 6, 0] }}
@@ -454,7 +479,16 @@ function Particles() {
    ============================================================ */
 function GmailIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      width="20"
+      height="20"
+    >
       <rect x="2" y="4" width="20" height="16" rx="2" />
       <path d="m22 7-10 6L2 7" />
     </svg>
@@ -479,7 +513,16 @@ function GitHubIcon() {
 
 function InstagramIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      width="20"
+      height="20"
+    >
       <rect x="2" y="2" width="20" height="20" rx="5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none" />
@@ -489,7 +532,16 @@ function InstagramIcon() {
 
 function SunIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      width="18"
+      height="18"
+    >
       <circle cx="12" cy="12" r="4" />
       <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
     </svg>
@@ -498,7 +550,16 @@ function SunIcon() {
 
 function MoonIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      width="18"
+      height="18"
+    >
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
     </svg>
   );
@@ -512,33 +573,43 @@ function Nav({ t, theme, onToggleTheme, lang, onToggleLang }) {
   const [activeSection, setActiveSection] = useState('top');
 
   const navSections = [
-    { id: 'top',      label: t.nav.home     },
-    { id: 'about',    label: t.nav.about    },
+    { id: 'top', label: t.nav.home },
+    { id: 'about', label: t.nav.about },
     { id: 'services', label: t.nav.services },
-    { id: 'work',     label: t.nav.work     },
-    { id: 'contact',  label: t.nav.contact  },
+    { id: 'work', label: t.nav.work },
+    { id: 'contact', label: t.nav.contact },
   ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
+
     window.addEventListener('scroll', onScroll, { passive: true });
+
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
     const ids = ['top', 'about', 'services', 'work', 'contact'];
-    const elements = ids.map((id) => document.getElementById(id)).filter(Boolean);
+    const elements = ids
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
     const onScroll = () => {
       const y = window.scrollY;
       const offset = 160;
       let current = 'top';
+
       elements.forEach((el) => {
         if (y + offset >= el.offsetTop) current = el.id;
       });
+
       setActiveSection(current);
     };
+
     onScroll();
+
     window.addEventListener('scroll', onScroll, { passive: true });
+
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -550,20 +621,32 @@ function Nav({ t, theme, onToggleTheme, lang, onToggleLang }) {
       transition={{ duration: 0.8, ease: EASE }}
     >
       <a href="#top" className="nav-brand">
-        <span className="nav-name">{lang === 'ar' ? 'نور درويش' : 'NOUR DARWESH'}</span>
+        <span className="nav-name">
+          {lang === 'ar' ? 'نور درويش' : 'NOUR DARWESH'}
+        </span>
       </a>
 
       <nav className="nav-menu">
         {navSections.map((s) => {
           const isActive = activeSection === s.id;
+
           return (
-            <a key={s.id} href={`#${s.id}`} className={`nav-link ${isActive ? 'is-active' : ''}`}>
+            <a
+              key={s.id}
+              href={`#${s.id}`}
+              className={`nav-link ${isActive ? 'is-active' : ''}`}
+            >
               <span className="nav-link-label">{s.label}</span>
+
               {isActive && (
                 <motion.span
                   className="nav-underline"
                   layoutId="nav-underline"
-                  transition={{ type: 'spring', stiffness: 380, damping: 32 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 380,
+                    damping: 32,
+                  }}
                 />
               )}
             </a>
@@ -572,10 +655,19 @@ function Nav({ t, theme, onToggleTheme, lang, onToggleLang }) {
       </nav>
 
       <div className="nav-right">
-        <button className="lang-toggle" onClick={onToggleLang} aria-label="Switch language">
+        <button
+          className="lang-toggle"
+          onClick={onToggleLang}
+          aria-label="Switch language"
+        >
           {lang === 'ar' ? 'EN' : 'ع'}
         </button>
-        <button className="theme-toggle" onClick={onToggleTheme} aria-label="Toggle theme">
+
+        <button
+          className="theme-toggle"
+          onClick={onToggleTheme}
+          aria-label="Toggle theme"
+        >
           {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
         </button>
       </div>
@@ -589,28 +681,31 @@ function Nav({ t, theme, onToggleTheme, lang, onToggleLang }) {
 function Hero({ t }) {
   const heroRef = useRef(null);
 
-  /* mouse parallax */
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
-  const smx = useSpring(mx, { stiffness: 90, damping: 20, mass: 0.8 });
-  const smy = useSpring(my, { stiffness: 90, damping: 20, mass: 0.8 });
+  const smx = useSpring(mx, {
+    stiffness: 90,
+    damping: 20,
+    mass: 0.8,
+  });
+  const smy = useSpring(my, {
+    stiffness: 90,
+    damping: 20,
+    mass: 0.8,
+  });
 
-  /* scroll progress of the hero section */
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ['start start', 'end start'],
   });
 
-  /* word fades + lifts up as you scroll */
   const wordOpacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
   const wordY = useTransform(scrollYProgress, [0, 1], [0, -120]);
   const wordScale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
 
-  /* photo fades + drifts down slightly */
   const photoOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
   const photoY = useTransform(scrollYProgress, [0, 1], [0, 90]);
 
-  /* bottom bar fades out first */
   const bottomOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
 
   const scrollToAbout = () => {
@@ -619,8 +714,11 @@ function Hero({ t }) {
 
   const handleMove = (e) => {
     const el = heroRef.current;
+
     if (!el) return;
+
     const rect = el.getBoundingClientRect();
+
     mx.set((e.clientX - rect.left) / rect.width - 0.5);
     my.set((e.clientY - rect.top) / rect.height - 0.5);
   };
@@ -630,7 +728,6 @@ function Hero({ t }) {
     my.set(0);
   };
 
-  /* mouse-parallax transforms */
   const tX = useTransform(smx, [-0.5, 0.5], [16, -16]);
   const tY = useTransform(smy, [-0.5, 0.5], [10, -10]);
   const tRotY = useTransform(smx, [-0.5, 0.5], [-5, 5]);
@@ -650,7 +747,6 @@ function Hero({ t }) {
       onMouseLeave={handleLeave}
     >
       <div className="hero-3d-scene">
-        {/* WORD — outer: scroll fade, inner: mouse parallax */}
         <motion.div
           className="hero-bg-layer"
           aria-hidden
@@ -674,14 +770,17 @@ function Hero({ t }) {
               className="hero-bg-text"
               initial={{ y: '-40vh', opacity: 0, rotateX: 45 }}
               animate={{ y: 0, opacity: 1, rotateX: 0 }}
-              transition={{ duration: 1.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 1.6,
+                delay: 0.1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
               {t.hero.bigWord}
             </motion.h1>
           </motion.div>
         </motion.div>
 
-        {/* PHOTO — outer: scroll fade, inner: mouse parallax */}
         <motion.div
           className="hero-photo-layer"
           style={{
@@ -709,15 +808,28 @@ function Hero({ t }) {
               alt="Nour Darwesh"
               className="hero-photo-img"
               draggable={false}
-              initial={{ y: '100vh', opacity: 0, rotateX: 40, scale: 0.85 }}
-              animate={{ y: 0, opacity: 1, rotateX: 0, scale: 1 }}
-              transition={{ duration: 1.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              initial={{
+                y: '100vh',
+                opacity: 0,
+                rotateX: 40,
+                scale: 0.85,
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                rotateX: 0,
+                scale: 1,
+              }}
+              transition={{
+                duration: 1.6,
+                delay: 0.4,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             />
           </motion.div>
         </motion.div>
       </div>
 
-      {/* BOTTOM BAR — fades out on scroll (children keep their own entry animation) */}
       <motion.div
         className="hero-bottom"
         style={{ opacity: bottomOpacity }}
@@ -728,8 +840,13 @@ function Hero({ t }) {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 1.2, ease: EASE }}
         >
-          <span className="hero-subtitle-bold">{t.hero.subtitleBold}</span>
-          <span className="hero-subtitle-italic">{t.hero.subtitleItalic}</span>
+          <span className="hero-subtitle-bold">
+            {t.hero.subtitleBold}
+          </span>
+
+          <span className="hero-subtitle-italic">
+            {t.hero.subtitleItalic}
+          </span>
         </motion.div>
 
         <motion.div
@@ -738,10 +855,18 @@ function Hero({ t }) {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 1.25, ease: EASE }}
         >
-          <button className="hero-arrow-btn" onClick={scrollToAbout} aria-label="Scroll down">
+          <button
+            className="hero-arrow-btn"
+            onClick={scrollToAbout}
+            aria-label="Scroll down"
+          >
             <motion.span
               animate={{ y: [0, 4, 0] }}
-              transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+              transition={{
+                duration: 1.6,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
             >
               ↓
             </motion.span>
@@ -761,10 +886,12 @@ function Hero({ t }) {
    ============================================================ */
 function TechTicker() {
   const items = [...TECH_TICKER, ...TECH_TICKER];
+
   return (
     <section className="ticker" aria-label="Technologies">
       <div className="ticker-fade ticker-fade-left" />
       <div className="ticker-fade ticker-fade-right" />
+
       <div className="ticker-track">
         {items.map((tech, i) => (
           <span key={i} className="ticker-item">
@@ -806,9 +933,18 @@ function About({ t }) {
           text={`Hey, I'm Nour. ${t.about.bio}`}
         />
 
-        <a className="about-store" href={STORE_URL} target="_blank" rel="noreferrer">
-          <span className="about-store-label">{t.about.cofounder}</span>
+        <a
+          className="about-store"
+          href={STORE_URL}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span className="about-store-label">
+            {t.about.cofounder}
+          </span>
+
           <span className="about-store-name">L'Atelier</span>
+
           <span className="about-store-arrow">↗</span>
         </a>
       </motion.div>
@@ -899,7 +1035,9 @@ function Services({ t }) {
               >
                 <span className="service-num">{num}</span>
                 <h3 className="service-row-title">{s.title}</h3>
-                <span className="service-arrow" aria-hidden>↘</span>
+                <span className="service-arrow" aria-hidden>
+                  ↘
+                </span>
               </button>
 
               <AnimatePresence initial={false}>
@@ -939,7 +1077,10 @@ function Services({ t }) {
    ============================================================ */
 function Section({ id, index, title, children }) {
   const headRef = useRef(null);
-  const headInView = useInView(headRef, { once: true, amount: 0.2 });
+  const headInView = useInView(headRef, {
+    once: true,
+    amount: 0.2,
+  });
 
   return (
     <section id={id} className="section">
@@ -947,12 +1088,17 @@ function Section({ id, index, title, children }) {
         ref={headRef}
         className="section-head"
         initial={{ opacity: 0, y: 30 }}
-        animate={headInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        animate={
+          headInView
+            ? { opacity: 1, y: 0 }
+            : { opacity: 0, y: 30 }
+        }
         transition={{ duration: 0.8, ease: EASE }}
       >
         <span className="section-index">{index}</span>
         <h2 className="section-title">{title}</h2>
       </motion.div>
+
       {children}
     </section>
   );
@@ -962,37 +1108,70 @@ function Section({ id, index, title, children }) {
    PROJECTS
    ============================================================ */
 function Projects({ t }) {
-  const images = [<SVGPortfolio key="p" />, <SVGStore key="s" />];
+  const images = [
+    <SVGPortfolio key="p" />,
+    <SVGStore key="s" />,
+    <SVGLinkGuard key="l" />,
+  ];
+
   const techs = [
     ['React', 'Framer Motion', 'Vite', 'CSS'],
     ['React', 'CSS', 'Responsive UI'],
+    ['Python', 'Flask', 'HTML', 'CSS'],
   ];
-  const links = [GITHUB_URL, STORE_URL];
-  const numbers = ['01', '02'];
+
+  const links = [
+    GITHUB_URL,
+    STORE_URL,
+    LINKGUARD_URL,
+  ];
+
+  const numbers = ['01', '02', '03'];
 
   return (
     <Section id="work" index="01" title={t.work.title}>
       <div className="projects">
         {t.work.items.map((p, i) => (
           <Fade key={i} delay={i * 0.08}>
-            <a className="project" href={links[i]} target="_blank" rel="noreferrer">
-              <div className="project-image-wrap">{images[i]}</div>
+            <a
+              className="project"
+              href={links[i]}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="project-image-wrap">
+                {images[i]}
+              </div>
 
               <div className="project-content">
                 <div className="project-head">
-                  <span className="project-number">{numbers[i]}</span>
+                  <span className="project-number">
+                    {numbers[i]}
+                  </span>
+
                   <h3 className="project-title">
-                    <span className="project-title-text">{p.title}</span>
+                    <span className="project-title-text">
+                      {p.title}
+                    </span>
                   </h3>
+
                   <span className="project-year">2026</span>
                 </div>
-                <p className="project-summary">{p.summary}</p>
+
+                <p className="project-summary">
+                  {p.summary}
+                </p>
+
                 <ul className="project-tech">
-                  {techs[i].map((tech) => <li key={tech}>{tech}</li>)}
+                  {techs[i].map((tech) => (
+                    <li key={tech}>{tech}</li>
+                  ))}
                 </ul>
               </div>
 
-              <span className="project-arrow" aria-hidden>→</span>
+              <span className="project-arrow" aria-hidden>
+                →
+              </span>
             </a>
           </Fade>
         ))}
@@ -1003,51 +1182,193 @@ function Projects({ t }) {
 
 function SVGPortfolio() {
   return (
-    <svg viewBox="0 0 320 200" className="project-image" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      viewBox="0 0 320 200"
+      className="project-image"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <defs>
         <linearGradient id="p1" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#0a1e3d" />
           <stop offset="100%" stopColor="#050b18" />
         </linearGradient>
       </defs>
+
       <rect width="320" height="200" fill="url(#p1)" />
       <rect x="0" y="0" width="320" height="20" fill="#050b18" />
+
       <circle cx="12" cy="10" r="3" fill="#ef4444" />
       <circle cx="24" cy="10" r="3" fill="#eab308" />
       <circle cx="36" cy="10" r="3" fill="#22c55e" />
+
       <rect x="24" y="50" width="160" height="12" rx="2" fill="#3b82f6" />
       <rect x="24" y="70" width="200" height="12" rx="2" fill="#64748b" opacity="0.6" />
       <rect x="24" y="90" width="140" height="12" rx="2" fill="#64748b" opacity="0.4" />
       <rect x="24" y="120" width="70" height="20" rx="10" fill="#3b82f6" />
-      <rect x="24" y="160" width="80" height="24" rx="4" fill="#1e3a5f" stroke="#3b82f6" opacity="0.4" />
-      <rect x="112" y="160" width="80" height="24" rx="4" fill="#1e3a5f" stroke="#3b82f6" opacity="0.4" />
-      <rect x="200" y="160" width="80" height="24" rx="4" fill="#1e3a5f" stroke="#3b82f6" opacity="0.4" />
+
+      <rect
+        x="24"
+        y="160"
+        width="80"
+        height="24"
+        rx="4"
+        fill="#1e3a5f"
+        stroke="#3b82f6"
+        opacity="0.4"
+      />
+
+      <rect
+        x="112"
+        y="160"
+        width="80"
+        height="24"
+        rx="4"
+        fill="#1e3a5f"
+        stroke="#3b82f6"
+        opacity="0.4"
+      />
+
+      <rect
+        x="200"
+        y="160"
+        width="80"
+        height="24"
+        rx="4"
+        fill="#1e3a5f"
+        stroke="#3b82f6"
+        opacity="0.4"
+      />
     </svg>
   );
 }
 
 function SVGStore() {
   return (
-    <svg viewBox="0 0 320 200" className="project-image" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      viewBox="0 0 320 200"
+      className="project-image"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <defs>
         <linearGradient id="p2" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#0a1e3d" />
           <stop offset="100%" stopColor="#050b18" />
         </linearGradient>
       </defs>
+
       <rect width="320" height="200" fill="url(#p2)" />
       <rect x="0" y="0" width="320" height="24" fill="#050b18" />
-      <text x="16" y="16" fill="#fafafa" fontSize="10" fontFamily="serif" fontStyle="italic">L'Atelier</text>
-      <text x="270" y="16" fill="#3b82f6" fontSize="8" fontFamily="sans-serif">CART · 0</text>
+
+      <text
+        x="16"
+        y="16"
+        fill="#fafafa"
+        fontSize="10"
+        fontFamily="serif"
+        fontStyle="italic"
+      >
+        L'Atelier
+      </text>
+
+      <text
+        x="270"
+        y="16"
+        fill="#3b82f6"
+        fontSize="8"
+        fontFamily="sans-serif"
+      >
+        CART · 0
+      </text>
+
       <rect x="24" y="50" width="80" height="60" rx="4" fill="#1e3a5f" />
       <rect x="120" y="50" width="80" height="60" rx="4" fill="#1a3a6b" />
       <rect x="216" y="50" width="80" height="60" rx="4" fill="#1e3a5f" />
+
       <rect x="24" y="120" width="40" height="6" rx="2" fill="#3b82f6" opacity="0.6" />
       <rect x="120" y="120" width="40" height="6" rx="2" fill="#3b82f6" opacity="0.6" />
       <rect x="216" y="120" width="40" height="6" rx="2" fill="#3b82f6" opacity="0.6" />
+
       <rect x="24" y="140" width="80" height="40" rx="4" fill="#1e3a5f" />
       <rect x="120" y="140" width="80" height="40" rx="4" fill="#1a3a6b" />
       <rect x="216" y="140" width="80" height="40" rx="4" fill="#1e3a5f" />
+    </svg>
+  );
+}
+
+function SVGLinkGuard() {
+  return (
+    <svg
+      viewBox="0 0 320 200"
+      className="project-image"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id="p3" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#0a1e3d" />
+          <stop offset="100%" stopColor="#050b18" />
+        </linearGradient >
+      </defs>
+
+      <rect width="320" height="200" fill="url(#p3)" />
+      <rect x="0" y="0" width="320" height="24" fill="#050b18" />
+
+      <rect
+        x="24"
+        y="48"
+        width="272"
+        height="42"
+        rx="6"
+        fill="#0f2748"
+        stroke="#3b82f6"
+        opacity="0.8"
+      />
+
+      <rect
+        x="38"
+        y="61"
+        width="170"
+        height="14"
+        rx="3"
+        fill="#64748b"
+        opacity="0.6"
+      />
+
+      <rect
+        x="220"
+        y="57"
+        width="58"
+        height="24"
+        rx="12"
+        fill="#3b82f6"
+      />
+
+      <circle
+        cx="160"
+        cy="132"
+        r="24"
+        fill="#1e3a5f"
+        stroke="#3b82f6"
+        strokeWidth="2"
+      />
+
+      <path
+        d="M150 132l7 7 14-16"
+        fill="none"
+        stroke="#3b82f6"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+
+      <rect
+        x="70"
+        y="174"
+        width="180"
+        height="5"
+        rx="2"
+        fill="#64748b"
+        opacity="0.35"
+      />
     </svg>
   );
 }
@@ -1062,35 +1383,87 @@ function Contact({ t }) {
         <ScrollText text={t.contact.body} />
 
         <Fade delay={0.15} className="contact-actions">
-          <a href={GMAIL_URL} target="_blank" rel="noreferrer" className="contact-btn">
-            <span className="contact-btn-icon"><GmailIcon /></span>
+          <a
+            href={GMAIL_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="contact-btn"
+          >
+            <span className="contact-btn-icon">
+              <GmailIcon />
+            </span>
+
             <span className="contact-btn-text">
-              <span className="contact-btn-label">{t.contact.email}</span>
-              <span className="contact-btn-value">{EMAIL}</span>
+              <span className="contact-btn-label">
+                {t.contact.email}
+              </span>
+
+              <span className="contact-btn-value">
+                {EMAIL}
+              </span>
             </span>
           </a>
 
-          <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="contact-btn">
-            <span className="contact-btn-icon"><LinkedInIcon /></span>
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="contact-btn"
+          >
+            <span className="contact-btn-icon">
+              <LinkedInIcon />
+            </span>
+
             <span className="contact-btn-text">
-              <span className="contact-btn-label">{t.contact.linkedin}</span>
-              <span className="contact-btn-value">nour-darwesh</span>
+              <span className="contact-btn-label">
+                {t.contact.linkedin}
+              </span>
+
+              <span className="contact-btn-value">
+                nour-darwesh
+              </span>
             </span>
           </a>
 
-          <a href={GITHUB_URL} target="_blank" rel="noreferrer" className="contact-btn">
-            <span className="contact-btn-icon"><GitHubIcon /></span>
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="contact-btn"
+          >
+            <span className="contact-btn-icon">
+              <GitHubIcon />
+            </span>
+
             <span className="contact-btn-text">
-              <span className="contact-btn-label">{t.contact.github}</span>
-              <span className="contact-btn-value">nourdarwesh960-web</span>
+              <span className="contact-btn-label">
+                {t.contact.github}
+              </span>
+
+              <span className="contact-btn-value">
+                nourdarwesh960-web
+              </span>
             </span>
           </a>
 
-          <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="contact-btn">
-            <span className="contact-btn-icon"><InstagramIcon /></span>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="contact-btn"
+          >
+            <span className="contact-btn-icon">
+              <InstagramIcon />
+            </span>
+
             <span className="contact-btn-text">
-              <span className="contact-btn-label">{t.contact.instagram}</span>
-              <span className="contact-btn-value">nourrdarwesh_</span>
+              <span className="contact-btn-label">
+                {t.contact.instagram}
+              </span>
+
+              <span className="contact-btn-value">
+                nourrdarwesh_
+              </span>
             </span>
           </a>
         </Fade>
@@ -1121,8 +1494,11 @@ export default function App() {
 
   const t = T[lang];
 
-  const toggleTheme = () => setTheme((x) => (x === 'dark' ? 'light' : 'dark'));
-  const toggleLang = () => setLang((x) => (x === 'en' ? 'ar' : 'en'));
+  const toggleTheme = () =>
+    setTheme((x) => (x === 'dark' ? 'light' : 'dark'));
+
+  const toggleLang = () =>
+    setLang((x) => (x === 'en' ? 'ar' : 'en'));
 
   useEffect(() => {
     document.documentElement.dir = t.dir;
@@ -1135,11 +1511,21 @@ export default function App() {
 
       <AnimatePresence>
         {!introDone && (
-          <Intro key="intro" lang={lang} onEnter={() => setIntroDone(true)} />
+          <Intro
+            key="intro"
+            lang={lang}
+            onEnter={() => setIntroDone(true)}
+          />
         )}
       </AnimatePresence>
 
-      <Nav t={t} theme={theme} onToggleTheme={toggleTheme} lang={lang} onToggleLang={toggleLang} />
+      <Nav
+        t={t}
+        theme={theme}
+        onToggleTheme={toggleTheme}
+        lang={lang}
+        onToggleLang={toggleLang}
+      />
 
       <main>
         <Hero t={t} />
