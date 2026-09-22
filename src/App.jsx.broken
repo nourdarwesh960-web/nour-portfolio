@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import {
   motion,
   AnimatePresence,
@@ -49,7 +49,7 @@ const T = {
     about: {
       eyebrow: 'ABOUT ME',
       bigWord: 'Intro',
-      bio: "A front-end developer from Egypt with a background in graphic design. I spent time at an art production company crafting brand identities and motion graphics before moving into front-end — now I blend that visual eye with clean code, building interfaces that feel effortless to use. I care about responsive layouts, accessibility, and the small details that make a product feel great.",
+        bio: "A front-end developer from Egypt with a background in graphic design. I spent time at an art production company crafting brand identities and motion graphics before moving into front-end development — now I blend that visual eye with clean code, building interfaces that feel effortless to use. I care about responsive layouts, accessibility, and the small details that make a product feel great.",
       cofounder: 'Co-founder at',
     },
     stack: { eyebrow: 'THE STACK' },
@@ -63,7 +63,7 @@ const T = {
         },
         {
           title: 'GRAPHIC DESIGN',
-          desc: 'Designing brand identities, visual systems, and motion graphics — the eye for composition and color that now shapes every interface I build.',
+          desc: 'Designing brand identities, visual systems, and motion graphics �?" the eye for composition and color that now shapes every interface I build.',
           list: ['Brand Identity', 'Logo Design', 'Motion Graphics', 'Photoshop', 'Illustrator', 'After Effects'],
         },
         {
@@ -83,7 +83,7 @@ const T = {
         },
         {
           title: 'DEPLOYMENT & TOOLING',
-          desc: 'Handling the full shipping pipeline — from version control to CI/CD to production monitoring.',
+          desc: 'Handling the full shipping pipeline �?" from version control to CI/CD to production monitoring.',
           list: ['Git & GitHub', 'Vercel', 'Netlify', 'CI/CD', 'Environment Config', 'Monitoring'],
         },
       ],
@@ -112,7 +112,7 @@ const T = {
     },
     contact: {
       title: 'Contact',
-      body: "I'm open to new projects, collaborations, or just a friendly chat. Feel free to reach out — I usually reply within a day.",
+        body: "I'm open to new projects, collaborations, or just a friendly chat. Feel free to reach out — I usually reply within a day.",
       email: 'Email', linkedin: 'LinkedIn', github: 'GitHub', instagram: 'Instagram',
     },
     footer: { copy: '© 2026 Nour Darwesh', built: 'Built with care' },
@@ -132,93 +132,89 @@ const T = {
 
   ar: {
     dir: 'rtl',
-    nav: { home: 'الرئيسية', about: 'نبذة', services: 'الخدمات', work: 'أعمالي', contact: 'تواصل' },
+    nav: { home: 'ا�"رئ�Sس�Sة', about: '�?بذة', services: 'ا�"خد�.ات', work: 'أع�.ا�"�S', contact: 'ت�^اص�"' },
     hero: {
-      bigWord: 'بورتفوليو',
-      subtitleBold: 'مطوّر',
-      subtitleItalic: 'واجهات',
-      contact: 'تواصل',
+      bigWord: 'ب�^رتف�^�"�S�^',
+      subtitleBold: '�.ط�^�'ر',
+      subtitleItalic: '�^اج�?ات',
+      contact: 'ت�^اص�"',
     },
     about: {
-      eyebrow: 'نبذة عني',
-      bigWord: 'تعريف',
-      bio: 'مطوّر واجهات أمامية من مصر بخلفية في التصميم الجرافيكي. عملت في شركة إنتاج فني حيث صممت هويات بصرية وموشن جرافيك قبل ما أنتقل لتطوير الواجهات — دلوقتي بدمج حس التصميم البصري مع الكود النظيف عشان أبني واجهات تبدو سهلة الاستخدام. بهتم بالتصميم المتجاوب، الوصولية، والتفاصيل الصغيرة اللي تخلي المنتج يبان مميز.',
-      cofounder: 'شريك مؤسس في',
+      eyebrow: '�?بذة ع�?�S',
+      bigWord: 'تعر�Sف',
+        bio: "A front-end developer from Egypt with a background in graphic design. I spent time at an art production company crafting brand identities and motion graphics before moving into front-end development — now I blend that visual eye with clean code, building interfaces that feel effortless to use. I care about responsive layouts, accessibility, and the small details that make a product feel great.",
+      cofounder: 'شر�S�f �.ؤسس ف�S',
     },
-    stack: { eyebrow: 'التقنيات' },
+    stack: { eyebrow: 'ا�"ت�,�?�Sات' },
     services: {
-      title: 'ما أُقدّمه',
+      title: '�.ا أُ�,د�'�.�?',
       items: [
         {
-          title: 'تطوير الويب',
-          desc: 'بناء تطبيقات ويب حديثة وسريعة باستخدام React وNext.js وكود نظيف وقابل للتوسع.',
+          title: 'تط�^�Sر ا�"�^�Sب',
+          desc: 'ب�?اء تطب�S�,ات �^�Sب حد�Sثة �^سر�Sعة باستخدا�. React �^Next.js �^�f�^د �?ظ�Sف �^�,اب�" �"�"ت�^سع.',
           list: ['React', 'Next.js', 'TypeScript', 'Vite', 'Node.js', 'Express'],
         },
         {
-          title: 'التصميم الجرافيكي',
-          desc: 'تصميم الهويات البصرية والأنظمة البصرية والموشن جرافيك — حس التكوين والألوان اللي بيشكّل كل واجهة أبنيها.',
-          list: ['الهوية البصرية', 'تصميم الشعارات', 'موشن جرافيك', 'Photoshop', 'Illustrator', 'After Effects'],
+          title: 'ا�"تص�.�S�. ا�"جراف�S�f�S',
+          desc: 'تص�.�S�. ا�"�?�^�Sات ا�"بصر�Sة �^ا�"أ�?ظ�.ة ا�"بصر�Sة �^ا�"�.�^ش�? جراف�S�f �?" حس ا�"ت�f�^�S�? �^ا�"أ�"�^ا�? ا�"�"�S ب�Sش�f�'�" �f�" �^اج�?ة أب�?�S�?ا.',
+          list: ['ا�"�?�^�Sة ا�"بصر�Sة', 'تص�.�S�. ا�"شعارات', '�.�^ش�? جراف�S�f', 'Photoshop', 'Illustrator', 'After Effects'],
         },
         {
-          title: 'واجهات المستخدم',
-          desc: 'تحويل التصاميم إلى واجهات متجاوبة بالبكسل مع اهتمام بالتفاصيل والوصولية.',
-          list: ['Tailwind CSS', 'CSS / SCSS', 'التصميم المتجاوب', 'Figma', 'الوصولية', 'أنظمة التصميم'],
+          title: '�^اج�?ات ا�"�.ستخد�.',
+          desc: 'تح�^�S�" ا�"تصا�.�S�. إ�"�? �^اج�?ات �.تجا�^بة با�"ب�fس�" �.ع ا�?ت�.ا�. با�"تفاص�S�" �^ا�"�^ص�^�"�Sة.',
+          list: ['Tailwind CSS', 'CSS / SCSS', 'ا�"تص�.�S�. ا�"�.تجا�^ب', 'Figma', 'ا�"�^ص�^�"�Sة', 'أ�?ظ�.ة ا�"تص�.�S�.'],
         },
         {
-          title: 'الحركة والتفاعل',
-          desc: 'إضافة حركات سلسة وتفاعلات دقيقة تجعل الواجهات تنبض بالحياة بدون التأثير على الأداء.',
-          list: ['Framer Motion', 'GSAP', 'حركات التمرير', 'تفاعلات دقيقة', 'انتقالات الصفحات', 'تحريك SVG'],
+          title: 'ا�"حر�fة �^ا�"تفاع�"',
+          desc: 'إضافة حر�fات س�"سة �^تفاع�"ات د�,�S�,ة تجع�" ا�"�^اج�?ات ت�?بض با�"ح�Sاة بد�^�? ا�"تأث�Sر ع�"�? ا�"أداء.',
+          list: ['Framer Motion', 'GSAP', 'حر�fات ا�"ت�.ر�Sر', 'تفاع�"ات د�,�S�,ة', 'ا�?ت�,ا�"ات ا�"صفحات', 'تحر�S�f SVG'],
         },
         {
-          title: 'الأداء وتحسين محركات البحث',
-          desc: 'تحسين سرعة التحميل وحجم الحزمة وظهور المنتج في نتائج البحث.',
-          list: ['Lighthouse', 'تقسيم الكود', 'Lazy Loading', 'Meta Tags', 'SSR / SSG', 'Core Web Vitals'],
+          title: 'ا�"أداء �^تحس�S�? �.حر�fات ا�"بحث',
+          desc: 'تحس�S�? سرعة ا�"تح�.�S�" �^حج�. ا�"حز�.ة �^ظ�?�^ر ا�"�.�?تج ف�S �?تائج ا�"بحث.',
+          list: ['Lighthouse', 'ت�,س�S�. ا�"�f�^د', 'Lazy Loading', 'Meta Tags', 'SSR / SSG', 'Core Web Vitals'],
         },
         {
-          title: 'النشر والأدوات',
-          desc: 'إدارة دورة النشر كاملة من Git إلى CI/CD إلى المراقبة في الإنتاج.',
-          list: ['Git & GitHub', 'Vercel', 'Netlify', 'CI/CD', 'متغيرات البيئة', 'المراقبة'],
+          title: 'ا�"�?شر �^ا�"أد�^ات',
+          desc: 'إدارة د�^رة ا�"�?شر �fا�.�"ة �.�? Git إ�"�? CI/CD إ�"�? ا�"�.را�,بة ف�S ا�"إ�?تاج.',
+          list: ['Git & GitHub', 'Vercel', 'Netlify', 'CI/CD', '�.تغ�Sرات ا�"ب�Sئة', 'ا�"�.را�,بة'],
         },
       ],
     },
     work: {
-      title: 'أعمال مختارة',
+      title: 'أع�.ا�" �.ختارة',
       items: [
         {
-          title: 'موقع البورتفوليو',
-          summary: 'بورتفوليو شخصي مع مقدمة سينمائية وكشف الكلمات عند التمرير.'
+          title: '�.�^�,ع ا�"ب�^رتف�^�"�S�^',
+          summary: 'ب�^رتف�^�"�S�^ شخص�S �.ع �.�,د�.ة س�S�?�.ائ�Sة �^�fشف ا�"�f�"�.ات ع�?د ا�"ت�.ر�Sر.'
         },
         {
-          title: "متجر L'Atelier",
-          summary: 'متجر إلكتروني حديث لعلامة أزياء.'
+          title: "�.تجر L'Atelier",
+          summary: '�.تجر إ�"�fتر�^�?�S حد�Sث �"ع�"ا�.ة أز�Sاء.'
         },
         {
           title: 'LinkGuard',
-          summary: 'تطبيق ويب مبني باستخدام Python لفحص والتحقق من الروابط من خلال واجهة بسيطة ومركزة.'
-        },
-        {
-          title: 'Hasala',
-          summary: 'Hasala web application built with React and JavaScript, focused on a clean, responsive, and easy-to-use experience.'
+          summary: 'تطب�S�, �^�Sب �.ب�?�S باستخدا�. Python �"فحص �^ا�"تح�,�, �.�? ا�"ر�^ابط �.�? خ�"ا�" �^اج�?ة بس�Sطة �^�.ر�fزة.'
         },
       ],
     },
     contact: {
-      title: 'تواصل',
-      body: 'أنا منفتح على المشاريع الجديدة أو التعاون. تواصل معي وسأرد خلال يوم.',
-      email: 'البريد', linkedin: 'لينكدإن', github: 'جيت هب', instagram: 'إنستجرام',
+      title: 'ت�^اص�"',
+      body: 'أ�?ا �.�?فتح ع�"�? ا�"�.شار�Sع ا�"جد�Sدة أ�^ ا�"تعا�^�?. ت�^اص�" �.ع�S �^سأرد خ�"ا�" �S�^�..',
+      email: 'ا�"بر�Sد', linkedin: '�"�S�?�fدإ�?', github: 'ج�Sت �?ب', instagram: 'إ�?ستجرا�.',
     },
-    footer: { copy: '© 2026 نور درويش', built: 'صُنع بعناية' },
+    footer: { copy: '© 2026 �?�^ر در�^�Sش', built: 'صُ�?ع بع�?ا�Sة' },
     intro: {
-      eyebrow: 'أهلاً، أنا',
-      profile: 'الملف',
-      taglineA: 'مطوّر واجهات',
-      taglineB: 'مصمم جرافيك',
-      subtitle: 'أصمّم وأطوّر منذ 2021',
-      enter: 'ادخل',
-      cornerTl: 'بورتفوليو / 2026',
-      cornerTr: 'نور درويش',
-      cornerBl: 'القاهرة · مصر',
-      cornerBr: 'متاح للعمل',
+      eyebrow: 'أ�?�"ا�<�O أ�?ا',
+      profile: 'ا�"�.�"ف',
+      taglineA: '�.ط�^�'ر �^اج�?ات',
+      taglineB: '�.ص�.�. جراف�S�f',
+      subtitle: 'أص�.�'�. �^أط�^�'ر �.�?ذ 2021',
+      enter: 'ادخ�"',
+      cornerTl: 'ب�^رتف�^�"�S�^ / 2026',
+      cornerTr: '�?�^ر در�^�Sش',
+      cornerBl: 'ا�"�,ا�?رة · �.صر',
+      cornerBr: '�.تاح �"�"ع�.�"',
     },
   },
 };
@@ -280,12 +276,12 @@ function Fade({ children, delay = 0, className = '', y = 30 }) {
 }
 
 /* ============================================================
-   INTRO — longer, cinematic, language-aware
+   INTRO �?" longer, cinematic, language-aware
    ============================================================ */
 function Intro({ onEnter, lang }) {
   const t = T[lang].intro;
   const isAr = lang === 'ar';
-  const name = isAr ? 'نور درويش' : 'Nour Darwesh';
+  const name = isAr ? '�?�^ر در�^�Sش' : 'Nour Darwesh';
 
   return (
     <motion.div
@@ -399,7 +395,7 @@ function Intro({ onEnter, lang }) {
             animate={{ x: [0, 6, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
           >
-            →
+            �?'
           </motion.span>
         </motion.button>
       </div>
@@ -631,7 +627,7 @@ function Nav({ t, theme, onToggleTheme, lang, onToggleLang }) {
     >
       <a href="#top" className="nav-brand">
         <span className="nav-name">
-          {lang === 'ar' ? 'نور درويش' : 'NOUR DARWESH'}
+          {lang === 'ar' ? '�?�^ر در�^�Sش' : 'NOUR DARWESH'}
         </span>
       </a>
 
@@ -685,7 +681,7 @@ function Nav({ t, theme, onToggleTheme, lang, onToggleLang }) {
 }
 
 /* ============================================================
-   HERO — 3D scene + scroll transitions
+   HERO �?" 3D scene + scroll transitions
    ============================================================ */
 function Hero({ t }) {
   const heroRef = useRef(null);
@@ -877,7 +873,7 @@ function Hero({ t }) {
                 ease: 'easeInOut',
               }}
             >
-              ↓
+              �?"
             </motion.span>
           </button>
 
@@ -954,7 +950,7 @@ function About({ t }) {
 
           <span className="about-store-name">L'Atelier</span>
 
-          <span className="about-store-arrow">↗</span>
+          <span className="about-store-arrow">�?-</span>
         </a>
       </motion.div>
     </section>
@@ -1045,7 +1041,7 @@ function Services({ t }) {
                 <span className="service-num">{num}</span>
                 <h3 className="service-row-title">{s.title}</h3>
                 <span className="service-arrow" aria-hidden>
-                  ↘
+                  �?~
                 </span>
               </button>
 
@@ -1182,7 +1178,7 @@ function Projects({ t }) {
               </div>
 
               <span className="project-arrow" aria-hidden>
-                →
+                �?'
               </span>
             </a>
           </Fade>
@@ -1699,6 +1695,10 @@ export default function App() {
     </div>
   );
 }
+
+
+
+
 
 
 

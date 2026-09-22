@@ -1,11 +1,11 @@
-// Used only when the API is unreachable (offline dev, failed deploy).
+﻿// Used only when the API is unreachable (offline dev, failed deploy).
 // Reflects real identity so offline renders never expose wrong name.
 export const fallbackProfile = {
   name: 'Hasibul Hasan',
   role: 'Software Engineer',
-  tagline: 'Software Engineer · Est. 2022',
-  bio: 'Software engineer building web applications and internal tooling. Currently IT Engineer at BIFPCL — Bangladesh India Friendship Power Company Limited — shipping side projects in React, Node.js, and Firebase after hours. Open to remote full-stack roles worldwide.',
-  location: 'Bangladesh · Remote',
+  tagline: 'Software Engineer Â· Est. 2022',
+  bio: 'Software engineer building web applications and internal tooling. Currently IT Engineer at BIFPCL â€” Bangladesh India Friendship Power Company Limited â€” shipping side projects in React, Node.js, and Firebase after hours. Open to remote full-stack roles worldwide.',
+  location: 'Bangladesh Â· Remote',
   timezone: 'DHK',
   availability: 'Open to work',
   establishedYear: 2022,
@@ -15,7 +15,7 @@ export const fallbackProfile = {
   github: 'https://github.com/hasib41',
   linkedin: '',
   readcv: '',
-  githubLabel: '/hasib41 ↗',
+  githubLabel: '/hasib41 â†—',
   linkedinLabel: '',
   readcvLabel: '',
   readcvKey: 'Personal',
@@ -25,7 +25,7 @@ export const fallbackProfile = {
   shipped: 6,
   heroTagBefore: 'Software Engineer',
   heroTagAfter: 'Est. 2022',
-  heroScrollHint: '↓ Scroll · Open to work · 2 min read',
+  heroScrollHint: 'â†“ Scroll Â· Open to work Â· 2 min read',
   navWorkLabel: 'Work',
   navExperienceLabel: 'Experience',
   navStackLabel: 'Stack',
@@ -42,7 +42,7 @@ export const fallbackProfile = {
   nowTitleAfter: ', reading, thinking about.',
   nowBlurb: '',
   nowTitle: 'This month',
-  nowSub: 'Focus · Deep work · Shipping',
+  nowSub: 'Focus Â· Deep work Â· Shipping',
   experienceEyebrow: 'Experience',
   experienceTitleBefore: 'Where I have',
   experienceTitleItalic: 'worked',
@@ -54,18 +54,31 @@ export const fallbackProfile = {
   stackTitleAfter: 'a few deep wells.',
   stackSubtitle: '',
   testimonialEyebrow: 'Word on the street',
-  contactEyebrow: 'Contact · Open for hire',
+  contactEyebrow: 'Contact Â· Open for hire',
   contactCtaBefore: "Let's",
   contactCtaItalic: 'talk',
-  contactCtaAfter: '→',
+  contactCtaAfter: 'â†’',
   footerTagline: 'Handcrafted in Bangladesh',
-  footerVersion: 'v1.0 · no cookies, no tracking',
+  footerVersion: 'v1.0 Â· no cookies, no tracking',
 };
 
-export const fallbackProjects = [];
+export const fallbackProjects = [
+  {
+    id: "hasala",
+    title: "Hasala",
+    italicPart: "Web App",
+    description: "Modern web application with a clean and responsive user experience.",
+    tech: "React · JavaScript · CSS",
+    year: "2026",
+    href: "https://hasala.nourdarwesh960.workers.dev/",
+    order: 1,
+    featured: true
+  }
+];
 export const fallbackExperience = [];
 export const fallbackStack = [];
 export const fallbackTestimonials = [];
 export const fallbackMetrics = [];
 export const fallbackNow = [];
 export const fallbackTicker = [];
+

@@ -196,10 +196,6 @@ const T = {
           title: 'LinkGuard',
           summary: 'تطبيق ويب مبني باستخدام Python لفحص والتحقق من الروابط من خلال واجهة بسيطة ومركزة.'
         },
-        {
-          title: 'Hasala',
-          summary: 'Hasala web application built with React and JavaScript, focused on a clean, responsive, and easy-to-use experience.'
-        },
       ],
     },
     contact: {
