@@ -47,10 +47,9 @@ const T = {
       contact: 'Contact',
     },
     about: {
-      eyebrow: 'ABOUT ME',
-      bigWord: 'Intro',
-      bio: "A front-end developer from Egypt with a background in graphic design. I spent time at an art production company crafting brand identities and motion graphics before moving into front-end ? now I blend that visual eye with clean code, building interfaces that feel effortless to use, while also working confidently with Microsoft Office tools. I care about responsive layouts, accessibility, and the small details that make a product feel great.",
-      cofounder: 'Co-founder at',
+      title: '\u0628\u0631\u0627\u0645\u062c Microsoft Office',
+      desc: '\u062e\u0628\u0631\u0629 \u0641\u064a \u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0623\u0647\u0645 \u0628\u0631\u0627\u0645\u062c Microsoft Office \u0644\u0644\u0645\u0633\u062a\u0646\u062f\u0627\u062a \u0648\u062c\u062f\u0627\u0648\u0644 \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0648\u0627\u0644\u0639\u0631\u0648\u0636 \u0627\u0644\u062a\u0642\u062f\u064a\u0645\u064a\u0629 \u0648\u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0648\u0625\u062f\u0627\u0631\u0629 \u0642\u0648\u0627\u0639\u062f \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a.',
+      list: ['Microsoft Word', 'Microsoft Excel', 'Microsoft PowerPoint', 'Microsoft Outlook', 'Microsoft Access'],
     },
     stack: { eyebrow: 'THE STACK' },
     services: {
@@ -186,8 +185,8 @@ const T = {
           list: ['Git & GitHub', 'Vercel', 'Netlify', 'CI/CD', 'متغيرات البيئة', 'المراقبة'],
         },
         {
-          title: 'برامج Microsoft Office',
-          desc: 'خبرة في استخدام أهم برامج Microsoft Office للمستندات وجداول البيانات والعروض التقديمية والبريد الإلكتروني وإدارة قواعد البيانات.',
+          title: '????? Microsoft Office',
+          desc: '??????? ????? Microsoft Office ???????? ?????? ????????? ???????? ??????? ????????? ?????? ?????? ?????? ????????.',
           list: ['Microsoft Word', 'Microsoft Excel', 'Microsoft PowerPoint', 'Microsoft Outlook', 'Microsoft Access'],
         },
       ],
@@ -224,6 +223,7 @@ const T = {
       profile: 'الملف',
       taglineA: 'مطوّر واجهات',
       taglineB: 'مصمم جرافيك',
+      taglineC: '????? Microsoft Office',
       taglineC: 'برامج Microsoft Office',
       subtitle: 'أصمّم وأطوّر منذ 2021',
       enter: 'ادخل',
